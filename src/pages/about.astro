@@ -15,16 +15,22 @@ const projects = await getCollection('projects')
 
     <section>
       <div class="min-w-full">
-        <h1 class="mb-4 text-3xl font-bold">Some more about us</h1>
+        <h1 class="mb-4 text-3xl font-bold">Welcome to eizo-gak.com!</h1>
         <p class="prose prose-neutral mb-8 dark:prose-invert">
-          {SITE.TITLE} is an opinionated, no-frills static blogging template built
-          with Astro.
+          映像学区は、趣味の世界を広げていくプロジェクトです。 <br/>
+          "EIZOGAK" is project, which aims to pave your way to dream and creation.
+        </p>      
+
+        <!--  <h2 class="mb-4 text-2xl font-semibold">現在のプロジェクト一覧</h2>  -->
+        <!--  <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">  -->
+        <!--  {projects.map((project) => <ProjectCard project={project} />)}  -->
+        <!--  </div>  -->
+
+        <br/>
+        <p style="text-align: center; font-weight:bold;">
+          Aboutページはただいま工事中です。
         </p>
 
-        <h2 class="mb-4 text-2xl font-semibold">Our Projects</h2>
-        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project) => <ProjectCard project={project} />)}
-        </div>
       </div>
     </section>
   </Container>

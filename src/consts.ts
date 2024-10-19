@@ -13,25 +13,25 @@ export type Link = {
 }
 
 export const SITE: Site = {
-  TITLE: 'astro-erudite',
+  TITLE: '映像学区',
   DESCRIPTION:
-    'astro-erudite is a opinionated, no-frills blogging template—built with Astro, Tailwind, and shadcn/ui.',
-  EMAIL: 'jason@enscribe.dev',
-  NUM_POSTS_ON_HOMEPAGE: 2,
-  POSTS_PER_PAGE: 3,
-  SITEURL: 'https://astro-erudite.vercel.app',
+    '',
+  EMAIL: 'setsugen2019@gmail.com',
+  NUM_POSTS_ON_HOMEPAGE: 4,
+  POSTS_PER_PAGE: 20,
+  SITEURL: 'https://eizo-gak.github.io',
 }
 
 export const NAV_LINKS: Link[] = [
   { href: '/blog', label: 'blog' },
   { href: '/authors', label: 'authors' },
-  { href: '/about', label: 'about' },
   { href: '/tags', label: 'tags' },
+  { href: '/about', label: 'about' },
 ]
 
 export const SOCIAL_LINKS: Link[] = [
-  { href: 'https://github.com/jktrn', label: 'GitHub' },
-  { href: 'https://twitter.com/enscry', label: 'Twitter' },
-  { href: 'jason@enscribe.dev', label: 'Email' },
-  { href: '/rss.xml', label: 'RSS' },
+  { href: 'https://youtube.com/@eizo-gak', label: 'YouTube' },
+  { href: 'https://twitter.com/eizo_gak', label: 'Twitter' },
+  { href: 'https://www.instagram.com/setsugen_tetra/', label: 'Instagram' },
+  { href: 'mailto:setsugen2019@gmail.com', label: 'Email' },
 ]

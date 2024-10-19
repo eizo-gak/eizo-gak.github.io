@@ -1,4 +1,5 @@
 ---
+import ArrowCard from '@/components/ArrowCard.astro'
 import BlogCard from '@/components/BlogCard.astro'
 import Container from '@/components/Container.astro'
 import Link from '@/components/Link.astro'
@@ -13,6 +14,7 @@ import {
 import { SITE } from '@/consts'
 import Layout from '@/layouts/Layout.astro'
 import { getCollection } from 'astro:content'
+import { YouTube } from "astro-embed";
 
 const blog = (await getCollection('blog'))
   .filter((post) => !post.data.draft)
@@ -21,59 +23,29 @@ const blog = (await getCollection('blog'))
 ---
 
 <Layout title="Home" description={SITE.DESCRIPTION}>
-  <Container class="flex flex-col gap-y-6">
+  <Container class="flex flex-col gap-y-6 w-full max-w-[939px] mx-auto">
     <section>
       <Card>
         <CardHeader>
-          <CardTitle className="text-3xl">er·u·dite</CardTitle>
+          <CardTitle className="text-3xl">ei·zo·gak</CardTitle>
           <CardDescription
-            >/ˈer(y)əˌdīt/ &bull; <span class="font-semibold">adjective</span
+            >/eːŋzoː ɡaku/ &bull; <span class="font-semibold">えいぞうがっく</span
             ></CardDescription
           >
         </CardHeader>
         <CardContent>
           <p class="mb-2 text-sm text-muted-foreground">
-            astro-erudite is an opinionated, no-frills static blogging template
-            built with <Link
-              href="https://astro.build"
-              class="text-foreground"
-              external
-              underline>Astro</Link
-            >, <Link
-              href="https://tailwindcss.com"
-              class="text-foreground"
-              external
-              underline>Tailwind</Link
-            >, and <Link
-              href="https://ui.shadcn.com"
-              class="text-foreground"
-              external
-              underline>shadcn/ui</Link
-            >. Extraordinarily loosely based on the <Link
-              href="https://astro-micro.vercel.app/"
-              class="text-foreground"
-              external
-              underline>Astro Micro</Link
-            > theme.
+            映像学区です。私たちはデザインの概念を主眼に据えた映像制作チュートリアルのほか、カメラやレンズのレビュー、日本を巡る写真旅シリーズなど、多彩なコンテンツを通じて創作活動をしています。
           </p>
           <p class="text-sm text-muted-foreground">
-            To use this template, check out the <Link
-              href="https://github.com/jktrn/astro-erudite"
-              class="text-foreground"
-              underline
-              external>GitHub</Link
-            > repository. To learn more about why this template exists, read this
-            blog post: <Link
-              href="/blog/the-state-of-static-blogs"
-              class="text-foreground"
-              underline>The State of Static Blogs in 2024</Link
-            >.
+            Welcome to eizo-gak official website!  
           </p>
         </CardContent>
       </Card>
     </section>
+
     <section class="flex flex-col gap-y-4">
-      <h2 class="text-2xl font-bold">Latest posts</h2>
+      <h2 class="text-2xl font-bold">Latest Posts</h2>
       <ul class="not-prose flex flex-col gap-y-4">
         {
           blog.map((post) => (
@@ -95,5 +67,90 @@ const blog = (await getCollection('blog'))
         </Link>
       </div>
     </section>
+
+    <section>
+      <h2 class="text-2xl font-bold">Latest eizogak.</h2>
+      <p style="margin-top: -10px; font-weight: bold; letter-spacing: 4px;">[ 最新の動画 ]</p>
+      <br/>
+
+      <div style="display: flex; justify-content: center;">
+        <iframe
+          width="100%"
+          height="auto"
+          style="max-width: 1200px; aspect-ratio: 16/9; border: none;"
+          src="https://www.youtube.com/embed/Y3M8SPUHOLo"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </section>
+
+    
+    <section>
+      <br/>
+      <div style="display: flex; justify-content: space-between;">
+        <div style="width: 32%;">
+          <a href="https://sites.google.com/view/happy-busy/">
+            <img src="/static/EmbeddedImage.webp" alt="img" style="width: 100%;" />
+          </a>
+        </div>
+        <div style="width: 32%;">
+          <a href="https://ameblo.jp/toukami/entrylist.html">
+            <img src="/static/logo-web_toukami.png" alt="img" style="width: 100%;" />
+          </a>
+        </div>
+        <div style="width: 32%;">
+          <a href="https://pvsf.jp/">
+            <img src="/static/pvsf-banner.png" alt="img" style="width: 100%;" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <section>
+      <h2 class="text-2xl font-bold">&nbsp週 報</h2>
+      <p style="margin-top: -10px; font-weight: bold; letter-spacing: 0.5px;">&nbsp&nbsp[ New‼️ ]</p>
+      <br/>
+      <ul class="not-prose flex flex-col gap-y-4">
+        {
+          blog.filter(post => post.data.tags?.includes('週報')).map(filteredPost => (
+            <li>
+              <ArrowCard entry={filteredPost} />
+            </li>
+          ))
+        }
+      </ul>
+      <br/>
+      <div class="flex justify-center">
+        <Link
+          href="/tags/週報"
+          class={buttonVariants({ variant: 'ghost' }) + ' group'}
+        >
+          See all posts <span
+            class="ml-1.5 transition-transform group-hover:translate-x-1"
+            >&rarr;</span
+          >
+        </Link>
+      </div>
+    </section>
+
+
+    <section>
+      <h2 class="text-2xl font-bold">&nbspLightroom Presets</h2>
+      <p style="margin-top: -10px; font-weight: bold; letter-spacing: 0.5px;">&nbsp&nbsp[ ...は準備中なので、テキトーなおすすめ記事。 ]</p>
+      <br/>
+      <ul class="not-prose flex flex-col gap-y-4">
+        {
+          blog.filter(post => !post.data.tags?.includes('週報')).map(filteredPost => (
+            <li>
+              <ArrowCard entry={filteredPost} />
+            </li>
+          ))
+        }
+      </ul>
+      <br/>
+    </section>
+    
   </Container>
 </Layout>
