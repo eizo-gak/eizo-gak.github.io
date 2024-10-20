@@ -46,6 +46,7 @@ const blog = (await getCollection('blog'))
 
     <section class="flex flex-col gap-y-4">
       <h2 class="text-2xl font-bold">Latest Posts</h2>
+      <p style="margin-top: -30px; font-weight: bold; letter-spacing: 0.5px;">&nbsp[ 新 着 記 事 ]</p>
       <ul class="not-prose flex flex-col gap-y-4">
         {
           blog.map((post) => (
@@ -75,7 +76,7 @@ const blog = (await getCollection('blog'))
 
       <div style="display: flex; justify-content: center;">
         <iframe
-          width="100%"
+          width="95%"
           height="auto"
           style="max-width: 1200px; aspect-ratio: 16/9; border: none;"
           src="https://www.youtube.com/embed/Y3M8SPUHOLo"
@@ -129,8 +130,8 @@ const blog = (await getCollection('blog'))
 
 
     <section>
-      <h2 class="text-2xl font-bold">&nbsp週 報</h2>
-      <p style="margin-top: -10px; font-weight: bold; letter-spacing: 0.5px;">&nbsp&nbsp[ New‼️ ]</p>
+      <h2 class="text-2xl font-bold">&nbspWeekly Posts.</h2>
+      <p style="margin-top: -15px; font-weight: bold; letter-spacing: 2.5px;">&nbsp&nbsp[ 週報のコーナー ]</p>
       <br/>
       <ul class="not-prose flex flex-col gap-y-4">
         {
@@ -153,12 +154,14 @@ const blog = (await getCollection('blog'))
           >
         </Link>
       </div>
+      <br/>
+      <br/>
     </section>
 
 
-    <section>
+    <!-- <section>
       <h2 class="text-2xl font-bold">&nbspLightroom Presets</h2>
-      <p style="margin-top: -10px; font-weight: bold; letter-spacing: 0.5px;">&nbsp&nbsp[ ...は準備中なので、テキトーなおすすめ記事。 ]</p>
+      <p style="margin-top: -10px; font-weight: bold; letter-spacing: 0.5px;">&nbsp&nbsp[ ...は準備中なので、テキトーなおすすめ記事 ]</p>
       <br/>
       <ul class="not-prose flex flex-col gap-y-4">
         {
@@ -170,7 +173,7 @@ const blog = (await getCollection('blog'))
         }
       </ul>
       <br/>
-    </section>
+    </section> -->
 
 
     <section>
@@ -187,6 +190,7 @@ const blog = (await getCollection('blog'))
           </a>
         </div>
     </div>
+    <br/>
     </section>   
 
     

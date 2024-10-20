@@ -1,6 +1,6 @@
 ---
-title: '2024/42週：ブログを破壊して週報を加える'
-description: ''
+title: '2024/10/18 ブログを破壊して週報を加える'
+description: 'Build & Scrap などと言っている場合ではない.'
 date: 2024-10-18
 tags: ['週報']
 image: './1200x630.png'
