@@ -1,6 +1,6 @@
 ---
 title: 'eizo-gak.comにお引越し'
-description: 'The first post of former website 2021.'
+description: 'Introduction of former website 2021.'
 date: 2021-12-04
 tags: ['Essay']
 image: './test-samune.png'

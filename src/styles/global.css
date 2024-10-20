@@ -102,7 +102,17 @@
 
 
 
+  h1 {
+      font-size:35px;
+      letter-spacing: 1px;
+      font-weight: bold;
+    }
 
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 23px; /* スマートフォンの場合のフォントサイズ */
+      }
+  }
   
   
   h2 {

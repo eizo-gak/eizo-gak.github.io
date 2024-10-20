@@ -18,7 +18,7 @@ export const SITE: Site = {
     '',
   EMAIL: 'setsugen2019@gmail.com',
   NUM_POSTS_ON_HOMEPAGE: 4,
-  POSTS_PER_PAGE: 20,
+  POSTS_PER_PAGE: 15,
   SITEURL: 'https://eizo-gak.github.io',
 }
 

@@ -22,7 +22,7 @@ const blog = (await getCollection('blog'))
   .slice(0, SITE.NUM_POSTS_ON_HOMEPAGE)
 ---
 
-<Layout title="Home" description={SITE.DESCRIPTION}>
+<Layout title="" description={SITE.DESCRIPTION}>
   <Container class="flex flex-col gap-y-6 w-full max-w-[939px] mx-auto">
     <section>
       <Card>
@@ -87,6 +87,7 @@ const blog = (await getCollection('blog'))
 
     
     <section>
+    <div class="hidden lg:block">
       <br/>
       <div style="display: flex; justify-content: space-between;">
         <div style="width: 32%;">
@@ -105,7 +106,26 @@ const blog = (await getCollection('blog'))
           </a>
         </div>
       </div>
+    </div>
     </section>
+
+
+    <section>
+    <div class="block lg:hidden flex justify-center">
+      <br/>
+        <div style="width: 45%; align:center;">
+          <a href="https://sites.google.com/view/happy-busy/">
+            <img src="/static/EmbeddedImage.webp" alt="img" style="width: 100%;" />
+          </a>
+        </div>
+
+        <div style="width: 45%; align:center;">
+          <a href="https://ameblo.jp/toukami/entrylist.html">
+            <img src="/static/logo-web_toukami.png" alt="img" style="width: 100%;" />
+          </a>
+        </div>
+    </div>
+    </section>    
 
 
     <section>
@@ -151,6 +171,24 @@ const blog = (await getCollection('blog'))
       </ul>
       <br/>
     </section>
+
+
+    <section>
+    <div class="block lg:hidden flex justify-center">
+      <br/>
+        <div style="width: 45%;">
+          <a href="https://pvsf.jp/">
+            <img src="/static/pvsf-banner.png" alt="img" style="width: 100%;" />
+          </a>
+        </div>
+        <div style="width: 45%;">
+          <a href="https://eizo-gak.com/">
+            <img src="/static/logo-web2.png" alt="img" style="width: 100%;" />
+          </a>
+        </div>
+    </div>
+    </section>   
+
     
   </Container>
 </Layout>
