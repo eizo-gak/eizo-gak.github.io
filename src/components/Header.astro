@@ -2,7 +2,7 @@
 import Container from '@/components/Container.astro'
 import Link from '@/components/Link.astro'
 import MobileMenu from '@/components/ui/mobile-menu'
-import { ModeToggle } from '@/components/ui/mode-toggle'
+//import { ModeToggle } from '@/components/ui/mode-toggle'
 import { NAV_LINKS, SITE } from '@/consts'
 import { Image } from 'astro:assets'
 //import logo from '../../public/static/logo.svg'
@@ -21,7 +21,7 @@ import logo3 from '../../public/static/logo-3.png'
       >
         <Image src={logo3} alt="Logo" class="size-8" />
           <h1 style="font-size: 14px; color: gray;">
-            &nbsp;&nbsp;&nbsp;映 像 学 区
+            &nbsp;&nbsp;映 像 学 区
           <h1/>
       </Link>
       <div class="flex items-center gap-2 md:gap-4">
@@ -37,7 +37,20 @@ import logo3 from '../../public/static/logo-3.png'
             ))
           }
         </nav>
-        <MobileMenu client:load transition:persist />
+
+        <nav class="block sm:hidden flex items-center gap-1 text-sm tracking-wider font-normal text-foreground/55">
+          <Link href="/blog"> Blog </Link>
+          <span>
+            {` ・ `}
+          </span>
+          <Link href="/tags"> Tags </Link>
+          <span>
+            {` ・ `}
+          </span>
+          <Link href="/about"> About </Link>
+        </nav>
+
+        <!-- <MobileMenu client:load transition:persist /> -->
         
         <!-- <ModeToggle client:load transition:persist /> -->
       </div>
