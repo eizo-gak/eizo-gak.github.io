@@ -27,25 +27,6 @@ const MobileMenu = () => {
     }
   }, [])
 
-  useEffect(() => {
-    const button = document.querySelector('#modeToggleButton')
-    if (button) {
-      button.addEventListener('click', function(event) {
-        console.log('Button clicked')
-        // ダークモードの切り替えコード
-      })
-    }
-
-    return () => {
-      if (button) {
-        button.removeEventListener('click', function(event) {
-          console.log('Button clicked')
-          // ダークモードの切り替えコード
-        })
-      }
-    }
-  }, [isOpen])
-
   return (
     <DropdownMenu open={isOpen} onOpenChange={setIsOpen} modal={false}>
       <DropdownMenuTrigger asChild>
