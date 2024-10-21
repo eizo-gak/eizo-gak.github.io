@@ -9,36 +9,14 @@ import * as React from 'react'
 
 const DropdownMenu = DropdownMenuPrimitive.Root
 
-const DropdownMenuTrigger = React.forwardRef<
-  React.ElementRef<typeof DropdownMenuPrimitive.Trigger>,
-  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Trigger>
->(({ className, ...props }, ref) => {
-  React.useEffect(() => {
-    const button = document.querySelector('#dropdownButton');
-    if (button) {
-      button.addEventListener('click', function(event) {
-        event.stopPropagation();
-        // ドロップダウンメニューの表示コード
-      });
-    }
-  }, []);
-
-  return (
-    <DropdownMenuPrimitive.Trigger
-      ref={ref}
-      className={cn(
-        'flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent data-[state=open]:bg-accent',
-        className,
-      )}
-      {...props}
-    />
-  );
-});
-DropdownMenuTrigger.displayName = DropdownMenuPrimitive.Trigger.displayName
+const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger
 
 const DropdownMenuGroup = DropdownMenuPrimitive.Group
+
 const DropdownMenuPortal = DropdownMenuPrimitive.Portal
+
 const DropdownMenuSub = DropdownMenuPrimitive.Sub
+
 const DropdownMenuRadioGroup = DropdownMenuPrimitive.RadioGroup
 
 const DropdownMenuSubTrigger = React.forwardRef<
