@@ -1,45 +1,41 @@
-import { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
-import { Laptop, Moon, Sun } from 'lucide-react';
+} from '@/components/ui/dropdown-menu'
+import { Laptop, Moon, Sun } from 'lucide-react'
+import * as React from 'react'
 
 export function ModeToggle() {
-  const [theme, setThemeState] = useState<'theme-light' | 'dark' | 'system'>('theme-light');
+  const [theme, setThemeState] = React.useState<
+    'theme-light' | 'dark' | 'system'
+  >('theme-light')
 
-  useEffect(() => {
-    const isDarkMode = document.documentElement.classList.contains('dark');
-    setThemeState(isDarkMode ? 'dark' : 'theme-light');
-  }, []);
+  React.useEffect(() => {
+    const isDarkMode = document.documentElement.classList.contains('dark')
+    setThemeState(isDarkMode ? 'dark' : 'theme-light')
+  }, [])
 
-  useEffect(() => {
+  React.useEffect(() => {
     const isDark =
       theme === 'dark' ||
-      (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      (theme === 'system' &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)
 
-    document.documentElement.classList.add('disable-transitions');
+    document.documentElement.classList.add('disable-transitions')
+
     document.documentElement.classList[isDark ? 'add' : 'remove']('dark')
-    window.getComputedStyle(document.documentElement).getPropertyValue('opacity');
+
+    window
+      .getComputedStyle(document.documentElement)
+      .getPropertyValue('opacity')
+
     requestAnimationFrame(() => {
-      document.documentElement.classList.remove('disable-transitions');
-    });
-  }, [theme]);
-
-  useEffect(() => {
-    const handleViewTransitionStart = () => {
-      setThemeState('theme-light'); // 必要に応じて初期状態にリセット
-    };
-
-    document.addEventListener('astro:before-swap', handleViewTransitionStart);
-
-    return () => {
-      document.removeEventListener('astro:before-swap', handleViewTransitionStart);
-    };
-  }, []);
+      document.documentElement.classList.remove('disable-transitions')
+    })
+  }, [theme])
 
   return (
     <DropdownMenu modal={false}>
@@ -70,5 +66,5 @@ export function ModeToggle() {
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
-  );
+  )
 }

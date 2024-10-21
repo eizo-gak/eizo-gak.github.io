@@ -3,7 +3,7 @@ title: 'Discordで記事を書く上での最良フォーマット'
 description: 'Timeline layout for Discord.'
 date: 2024-09-19
 tags: ['Essay']
-image: './samune1200.png'
+image: './1200x630.png'
 authors: ['setsugen-tetra']
 draft: false
 ---
